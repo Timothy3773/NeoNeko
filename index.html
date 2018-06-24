@@ -43,10 +43,10 @@
       if (key.key == 'e'){
         if (document.getElementById('neko').hidden == false){
           document.getElementById('neko').hidden = true
-          document.getElementById('tip1').hidden = true
+          document.getElementById('tip1').innerText = 'Welcome back! On your last exam you got 99%!'
         }else{
           document.getElementById('neko').hidden = false
-          document.getElementById('tip1').hidden = false
+          document.getElementById('tip1').innerText = 'Press e to hide from parents.'
         }
         
       }
