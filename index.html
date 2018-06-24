@@ -4,8 +4,8 @@
     <link rel="stylesheet" href="./index.css"/>
     <script src="jquery-3.3.1.min.js"></script>
     <title>NeoNeko</title>
-    <link rel="icon" id="siteicon">
       <meta name="description" content="h0t nekos">
+    <link rel="icon" id="siteicon">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
   </head>
   <style>
@@ -20,6 +20,7 @@
     <div id="about">
       <p>srry homie dis under <i>cun</i>s<i>t</i>ruction. so heres some nekos for u</p>
       <center><img id="neko" width="40%"></center>
+      <p id="tip1">Press e to hide from parents.</p>
       <center><button id="refresh">Click to refresh or press r</button></center>
     </div>
 
@@ -39,6 +40,16 @@
           document.getElementById('neko').src = data.url
         });
       }
+      if (key.key == 'e'){
+        if (document.getElementById('neko').hidden == false){
+          document.getElementById('neko').hidden = true
+          document.getElementById('tip1').hidden = true
+        }else{
+          document.getElementById('neko').hidden = false
+          document.getElementById('tip1').hidden = false
+        }
+        
+      }
     })
      $.getJSON('https://nekos.life/api/v2/img/avatar', function (data) {
         document.getElementById('siteicon').href = data.url
@@ -50,6 +61,8 @@ window.addEventListener('keydown', keyb => {
     });
   }
 })
+
+
 </script>
   </body>
 
