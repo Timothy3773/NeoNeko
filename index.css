@@ -45,6 +45,28 @@ button {
   border-color: rgb(61, 61, 61);
 }
 
+.input {
+  background-color: rgb(61, 61, 61);
+  color: rgb(255, 255, 255);
+  font-family: monospace;
+  font-size: 36px;
+}
+
+.input:hover {
+  background-color: rgb(61, 61, 61);
+  color: rgb(255, 255, 255);
+  font-family: monospace;
+  font-size: 36px;
+  cursor: not-allowed;
+    border-radius: 7px;
+  border-style: solid;
+  border-color: rgb(61, 61, 61);
+}
+
+
+
+
+
 a {
     color: rgb(255, 255, 255);
     
