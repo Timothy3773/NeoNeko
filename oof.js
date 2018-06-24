@@ -1,1 +1,0 @@
-msg.channel.send('hi')
