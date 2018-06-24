@@ -46,6 +46,17 @@
         document.getElementById('nsfw').innerText = 'NSFW Mode: Off'
       }
     })
+        document.addEventListener('keypress', onkey => {
+      if (onkey.key == 'n'){
+         if (a1 == x) {
+          a1 = b
+          document.getElementById('nsfw').innerText = 'NSFW Mode: On'
+        } else {
+          a1 = x
+          document.getElementById('nsfw').innerText = 'NSFW Mode: Off'
+        }
+      }
+    })
     $.getJSON(a1, function (data) {
       document.getElementById('neko').src = data.url
     });
