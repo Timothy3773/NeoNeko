@@ -21,9 +21,7 @@
       <center><img id="neko" width="40%"></center>
       <center><button id="refresh">Click to refresh or press r</button></center>
     </div>
-        <div class="sitebox" id="rc">
-           <center><h2>Resources: <a href="https://nekos.life/" id="ahref">https://nekos.life/</a></h2></center>
-        </div>
+
 <script>
   let images = ["https://nekos.life/api/v2/img/neko", 'https://nekos.life/api/v2/img/ero', 'https://nekos.life/api/v2/img/hug']
   $.getJSON(images[Math.floor(Math.random() * images.length)], function (data) {
