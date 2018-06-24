@@ -27,7 +27,7 @@
     <p id="tip1">Press e to hide from parents.</p>
     <center>
       <button id="refresh">Click to refresh or press r</button>
-<button id="nsfw" class="input">NSFW Mode: Off</button>
+<button id="nsfw" class="input" disabled>NSFW Mode: Off</button>
     </center>
   </div>
 
@@ -37,10 +37,10 @@
     let b = nsfwimgs[Math.floor(Math.random() * nsfwimgs.length)]
     let x = images[Math.floor(Math.random() * images.length)]
     let a1 = x
-    document.getElementById('nsfw').addEventListener('click', btnclick => {
+    /*document.getElementById('nsfw').addEventListener('click', btnclick => {
       if (a1 == x){
         a1 = b
-        document.getElementById('nsfw').innerText = 'NSFW Mode: On'
+document.getElementById('nsfw').innerText = 'NSFW Mode: On'
       }else{
         a1 = x
         document.getElementById('nsfw').innerText = 'NSFW Mode: Off'
@@ -56,7 +56,7 @@
           document.getElementById('nsfw').innerText = 'NSFW Mode: Off'
         }
       }
-    })
+    })*/
     $.getJSON(a1, function (data) {
       document.getElementById('neko').src = data.url
     });
