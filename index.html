@@ -57,17 +57,17 @@ document.getElementById('nsfw').innerText = 'NSFW Mode: On'
         }
       }
     })*/
-    $.getJSON(a1, function (data) {
+    $.getJSON(images, function (data) {
       document.getElementById('neko').src = data.url
     });
     document.getElementById('refresh').addEventListener('click', btn => {
-      $.getJSON(a1, function (data) {
+      $.getJSON(images, function (data) {
         document.getElementById('neko').src = data.url
       });
     })
     window.addEventListener('keypress', key => {
       if (key.key == 'r') {
-        $.getJSON(a1, function (data) {
+        $.getJSON(images, function (data) {
           document.getElementById('neko').src = data.url
         });
       }
