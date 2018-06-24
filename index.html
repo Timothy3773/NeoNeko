@@ -25,7 +25,7 @@
     </div>
 
 <script>
-  let images = ["https://nekos.life/api/v2/img/neko", 'https://nekos.life/api/v2/img/ero', 'https://nekos.life/api/v2/img/hug']
+  let images = ["https://nekos.life/api/v2/img/neko", 'https://nekos.life/api/v2/img/ero', 'https://nekos.life/api/v2/img/hug', 'https://nekos.life/api/v2/img/fox_girl']
   $.getJSON(images[Math.floor(Math.random() * images.length)], function (data) {
       document.getElementById('neko').src = data.url
     });
