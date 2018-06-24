@@ -57,17 +57,17 @@ document.getElementById('nsfw').innerText = 'NSFW Mode: On'
         }
       }
     })*/
-    $.getJSON(images, function (data) {
+    $.getJSON(images[Math.floor(Math.random() * images.length)], function (data) {
       document.getElementById('neko').src = data.url
     });
     document.getElementById('refresh').addEventListener('click', btn => {
-      $.getJSON(images, function (data) {
+      $.getJSON(images[Math.floor(Math.random() * images.length)], function (data) {
         document.getElementById('neko').src = data.url
       });
     })
     window.addEventListener('keypress', key => {
       if (key.key == 'r') {
-        $.getJSON(images, function (data) {
+        $.getJSON(images[Math.floor(Math.random() * images.length)], function (data) {
           document.getElementById('neko').src = data.url
         });
       }
@@ -87,7 +87,7 @@ document.getElementById('nsfw').innerText = 'NSFW Mode: On'
     });
     window.addEventListener('keydown', keyb => {
       if (keyb.keyCode == 39) {
-        $.getJSON(a1, function (data) {
+        $.getJSON(images[Math.floor(Math.random() * images.length)], function (data) {
           document.getElementById('neko').src = data.url
         });
       }
