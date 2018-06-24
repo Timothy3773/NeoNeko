@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="./index.css"/>
     <script src="jquery-3.3.1.min.js"></script>
     <title>NeoNeko</title>
+    <link rel="icon" id="siteicon">
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
   </head>
   <style>
@@ -40,6 +41,9 @@
         });
       }
     })
+     $.getJSON('https://nekos.life/api/v2/img/avatar', function (data) {
+        document.getElementById('siteicon').href = data.url
+      });
 window.addEventListener('keydown', keyb => {
   if (keyb.keyCode == 39){
       $.getJSON(images[Math.floor(Math.random() * images.length)], function (data) {
@@ -50,5 +54,5 @@ window.addEventListener('keydown', keyb => {
 </script>
   </body>
 
- 
+
 </html>
