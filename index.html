@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="./index.css"/>
+    <script src="jquery-3.3.1.min.js"></script>
+    <title>NeoNeko</title>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+  </head>
+  <style>
+  body {
+    margin: 0;
+  }
+  </style>
+  <body>
+    <nav id="nav">
+    <h1 id="h1">NeoNeko</h1>
+    </nav>
+    <div id="about">
+      <p>srry homie dis under <i>cun</i>s<i>t</i>ruction. so heres some nekos for u</p>
+      <center><img id="neko" width="40%"></center>
+      <center><button id="refresh">Click to refresh or press r</button></center>
+    </div>
+        <div class="sitebox" id="rc">
+           <center><h2>Resources: <a href="https://nekos.life/" id="ahref">https://nekos.life/</a></h2></center>
+        </div>
+<script>
+  let images = ["https://nekos.life/api/v2/img/neko", 'https://nekos.life/api/v2/img/ero', 'https://nekos.life/api/v2/img/hug']
+  $.getJSON(images[Math.floor(Math.random() * images.length)], function (data) {
+      document.getElementById('neko').src = data.url
+    });
+    document.getElementById('refresh').addEventListener('click', btn => {
+        $.getJSON(images[Math.floor(Math.random() * images.length)], function (data) {
+        document.getElementById('neko').src = data.url
+      });
+    })
+    window.addEventListener('keypress', key => {
+      if (key.key == 'r'){
+          $.getJSON(images[Math.floor(Math.random() * images.length)], function (data) {
+          document.getElementById('neko').src = data.url
+        });
+      }
+    })
+window.addEventListener('keydown', keyb => {
+  if (keyb.keyCode == 39){
+      $.getJSON(images[Math.floor(Math.random() * images.length)], function (data) {
+      document.getElementById('neko').src = data.url
+    });
+  }
+})
+</script>
+  </body>
+
+  <script src="./index.js"></script>
+</html>
