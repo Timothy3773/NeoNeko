@@ -1,70 +1,92 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="./index.css"/>
-    <script src="jquery-3.3.1.min.js"></script>
-    <title>NeoNeko</title>
-      <meta name="description" content="h0t nekos">
-    <link rel="icon" id="siteicon">
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-  </head>
-  <style>
+
+<head>
+  <link rel="stylesheet" href="./index.css" />
+  <script src="jquery-3.3.1.min.js"></script>
+  <title>NeoNeko</title>
+  <meta name="description" content="h0t nekos">
+  <link rel="icon" id="siteicon">
+  <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+</head>
+<style>
   body {
     margin: 0;
   }
-  </style>
-  <body>
-    <nav id="nav">
-    <h1 id="h1">NeoNeko</h1>
-    </nav>
-    <div id="about">
-      <p>srry homie dis under <i>cun</i>s<i>t</i>ruction. so heres some nekos for u</p>
-      <center><img id="neko" width="40%"></center>
-      <p id="tip1">Press e to hide from parents.</p>
-      <center><button id="refresh">Click to refresh or press r</button></center>
-    </div>
+</style>
 
-<script>
-  let images = ["https://nekos.life/api/v2/img/neko", 'https://nekos.life/api/v2/img/ero', 'https://nekos.life/api/v2/img/hug', 'https://nekos.life/api/v2/img/fox_girl', 'https://nekos.life/api/v2/img/waifu']
-  $.getJSON(images[Math.floor(Math.random() * images.length)], function (data) {
+<body>
+  <nav id="nav">
+    <h1 id="h1">NeoNeko</h1>
+  </nav>
+  <div id="about">
+    <p>srry homie dis under
+      <i>cun</i>s
+      <i>t</i>ruction. so heres some nekos for u</p>
+    <center>
+      <img id="neko" width="40%">
+    </center>
+    <p id="tip1">Press e to hide from parents.</p>
+    <center>
+      <button id="refresh">Click to refresh or press r</button>
+<button id="nsfw" class="input">NSFW Mode: Off</button>
+    </center>
+  </div>
+
+  <script>
+    let images = ["https://nekos.life/api/v2/img/neko", 'https://nekos.life/api/v2/img/pat', 'https://nekos.life/api/v2/img/hug', 'https://nekos.life/api/v2/img/fox_girl', 'https://nekos.life/api/v2/img/waifu']
+    let nsfwimgs = ["https://nekos.life/api/v2/img/lewd", 'https://nekos.life/api/v2/img/ero']
+    let b = nsfwimgs[Math.floor(Math.random() * nsfwimgs.length)]
+    let x = images[Math.floor(Math.random() * images.length)]
+    let a1 = x
+    document.getElementById('nsfw').addEventListener('click', btnclick => {
+      if (a1 == x){
+        a1 = b
+        document.getElementById('nsfw').innerText = 'NSFW Mode: On'
+      }else{
+        a1 = x
+        document.getElementById('nsfw').innerText = 'NSFW Mode: Off'
+      }
+    })
+    $.getJSON(a1, function (data) {
       document.getElementById('neko').src = data.url
     });
     document.getElementById('refresh').addEventListener('click', btn => {
-        $.getJSON(images[Math.floor(Math.random() * images.length)], function (data) {
+      $.getJSON(a1, function (data) {
         document.getElementById('neko').src = data.url
       });
     })
     window.addEventListener('keypress', key => {
-      if (key.key == 'r'){
-          $.getJSON(images[Math.floor(Math.random() * images.length)], function (data) {
+      if (key.key == 'r') {
+        $.getJSON(a1, function (data) {
           document.getElementById('neko').src = data.url
         });
       }
-      if (key.key == 'e'){
-        if (document.getElementById('neko').hidden == false){
+      if (key.key == 'e') {
+        if (document.getElementById('neko').hidden == false) {
           document.getElementById('neko').hidden = true
           document.getElementById('tip1').innerText = 'Welcome back! On your last exam you got 99%!'
-        }else{
+        } else {
           document.getElementById('neko').hidden = false
           document.getElementById('tip1').innerText = 'Press e to hide from parents.'
         }
-        
+
       }
     })
-     $.getJSON('https://nekos.life/api/v2/img/avatar', function (data) {
-        document.getElementById('siteicon').href = data.url
-      });
-window.addEventListener('keydown', keyb => {
-  if (keyb.keyCode == 39){
-      $.getJSON(images[Math.floor(Math.random() * images.length)], function (data) {
-      document.getElementById('neko').src = data.url
+    $.getJSON('https://nekos.life/api/v2/img/avatar', function (data) {
+      document.getElementById('siteicon').href = data.url
     });
-  }
-})
+    window.addEventListener('keydown', keyb => {
+      if (keyb.keyCode == 39) {
+        $.getJSON(a1, function (data) {
+          document.getElementById('neko').src = data.url
+        });
+      }
+    })
 
 
-</script>
-  </body>
+  </script>
+</body>
 
 
 </html>
